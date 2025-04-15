@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 포트폴리오 아이템 필터링
         portfolioItems.forEach(item => {
-          if (filterValue === 'all' || item.classList.contains(filterValue)) {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
             item.style.display = 'block';
             setTimeout(() => {
               item.style.opacity = '1';
