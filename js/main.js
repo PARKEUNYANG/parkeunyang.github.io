@@ -2,6 +2,35 @@
 
 // DOM 요소가 모두 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
+  // 오로라 효과 애니메이션
+  const auroras = document.querySelectorAll('.aurora');
+  
+  function animateAuroras() {
+    auroras.forEach((aurora, index) => {
+      // 마우스 움직임에 따라 오로라 효과를 약간 이동
+      document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        const moveX = (mouseX - 0.5) * 20 * (index + 1);
+        const moveY = (mouseY - 0.5) * 20 * (index + 1);
+        
+        aurora.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${index * 120}deg)`;
+      });
+      
+      // 스크롤 이벤트에 따라 오로라 크기와 투명도 변경
+      window.addEventListener('scroll', () => {
+        const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        const scaleValue = 1 + (scrollPercentage * 0.4 * (index + 1));
+        const opacityChange = 0.05 * scrollPercentage * (index + 1);
+        
+        aurora.style.opacity = Math.max(0.5, 0.9 - opacityChange);
+        aurora.style.transform = `scale(${scaleValue})`;
+      });
+    });
+  }
+  
+  animateAuroras();
   // 네비게이션 토글 기능
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');

@@ -27,7 +27,7 @@
     .direction-card {
       margin-bottom: 1.5rem;
       padding: 1.5rem;
-      background-color: var(--white);
+      background-color: rgba(255, 255, 255, 0.7);
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       display: flex;
@@ -55,17 +55,24 @@
       margin-right: 0.5rem;
       margin-bottom: 0.5rem;
       border-radius: var(--border-radius);
-      background-color: var(--light-gray);
+      background-color: rgba(245, 245, 245, 0.7);
       font-weight: 500;
     }
     
     .highlight {
       color: var(--white);
-      background-color: var(--primary-color);
+      background-color: rgba(26, 58, 95, 0.7);
     }
   </style>
 </head>
 <body>
+  <!-- 오로라 배경 효과 -->
+  <div class="aurora-container">
+    <div class="aurora"></div>
+    <div class="aurora"></div>
+    <div class="aurora"></div>
+  </div>
+  
   <!-- 헤더 -->
   <header class="header">
     <div class="container header-content">
@@ -101,7 +108,7 @@
   </header>
 
   <!-- 페이지 제목 섹션 -->
-  <section class="page-header" style="background-color: var(--primary-color); color: var(--white); padding: 6rem 0 3rem; margin-bottom: 3rem;">
+  <section class="page-header" style="background-color: rgba(26, 58, 95, 0.4); color: var(--white); padding: 6rem 0 3rem; margin-bottom: 3rem;">
     <div class="container">
       <h1 style="color: var(--white); margin-bottom: 1rem;">오시는길</h1>
       <p style="font-size: var(--font-lg); max-width: 600px;">한 권의 책이라도 당신의 소중한 마음을 담아 빚어냅니다. 세원프린팅은 영등포에 위치하고 있습니다. 아래 지도와 안내를 참고하시어 방문해주세요.</p>
@@ -216,7 +223,7 @@
   </section>
 
   <!-- 약도 섹션 -->
-  <section class="section" style="background-color: var(--light-gray);">
+  <section class="section" style="background-color: rgba(245, 245, 245, 0.5);">
     <div class="container">
       <h2 class="section-title">약도</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center;">

@@ -1,5 +1,135 @@
 /* 세원프린팅 메인 스타일시트 */
 
+/* 폰트 설정 */
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-1Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-2ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-3Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-4Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-5Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-6SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-7Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-8ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('../fonts/Paperlogy-9Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* 오로라 애니메이션 배경 효과 */
+.aurora-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: linear-gradient(45deg, 
+    rgba(26, 58, 95, 0.5) 0%, 
+    rgba(242, 121, 53, 0.4) 25%, 
+    rgba(26, 58, 95, 0.5) 50%, 
+    rgba(242, 121, 53, 0.4) 75%, 
+    rgba(26, 58, 95, 0.5) 100%);
+  filter: blur(40px);
+  border-radius: 40%;
+  animation: aurora-rotate 15s linear infinite;
+}
+
+.aurora:nth-child(2) {
+  opacity: 0.85;
+  filter: blur(60px);
+  animation: aurora-rotate 25s linear infinite;
+  animation-direction: reverse;
+  background: linear-gradient(120deg, 
+    rgba(242, 121, 53, 0.45) 0%, 
+    rgba(26, 58, 95, 0.5) 25%, 
+    rgba(242, 121, 53, 0.45) 50%, 
+    rgba(26, 58, 95, 0.5) 75%, 
+    rgba(242, 121, 53, 0.45) 100%);
+}
+
+.aurora:nth-child(3) {
+  opacity: 0.7;
+  filter: blur(70px);
+  animation: aurora-rotate 30s linear infinite;
+  background: linear-gradient(60deg, 
+    rgba(26, 58, 95, 0.4) 0%, 
+    rgba(242, 121, 53, 0.45) 25%, 
+    rgba(26, 58, 95, 0.4) 50%, 
+    rgba(242, 121, 53, 0.45) 75%, 
+    rgba(26, 58, 95, 0.4) 100%);
+}
+
+@keyframes aurora-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
 /* 변수 및 기본 설정 */
 :root {
   /* 색상 팔레트 */
@@ -33,6 +163,11 @@
   --transition: all 0.3s ease;
 }
 
+/* 오로라가 잘 보이도록 배경색 더 투명하게 설정 */
+body {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* 전체 리셋 */
 * {
   margin: 0;
@@ -42,7 +177,7 @@
 
 /* 기본 폰트 및 스타일 */
 body {
-  font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
+  font-family: 'Paperlogy', sans-serif;
   color: var(--dark-gray);
   line-height: 1.5;
   background-color: var(--white);
@@ -50,7 +185,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Paperlogy', sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
@@ -93,6 +228,7 @@ a:hover {
 
 .section {
   padding: var(--spacing-xxl) 0;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .section-title {
@@ -139,7 +275,7 @@ a:hover {
 }
 
 .card {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   padding: var(--spacing-lg);
@@ -157,7 +293,7 @@ a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: var(--transition);
@@ -231,7 +367,7 @@ a:hover {
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--primary-color);
+  background-color: rgba(26, 58, 95, 0.4); /* 네이비 색상의 투명도 높임 */
   overflow: hidden;
   margin-top: 80px; /* 헤더 높이만큼 마진 추가 */
 }
@@ -261,7 +397,7 @@ a:hover {
   width: 50%;
   background-size: cover;
   background-position: center;
-  opacity: 0.8;
+  opacity: 0.3;
 }
 
 /* 서비스 섹션 */
@@ -344,7 +480,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(26, 58, 95, 0.8);
+  background-color: rgba(26, 58, 95, 0.6); /* 더 투명하게 변경 */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -473,7 +609,7 @@ a:hover {
   top: 50%;
   right: 10%;
   transform: translateY(-50%);
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -504,7 +640,7 @@ a:hover {
 
 /* 푸터 */
 .footer {
-  background-color: var(--primary-color);
+  background-color: rgba(26, 58, 95, 0.7); /* 푸터의 네이비 투명도도 높임 */
   color: var(--white);
   padding: var(--spacing-xl) 0;
 }
@@ -624,7 +760,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 0;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.8); /* 네비게이션 메뉴 배경도 투명하게 */
     flex-direction: column;
     align-items: center;
     overflow: hidden;

@@ -22,9 +22,22 @@
       fill: var(--primary-color);
       margin-bottom: 1rem;
     }
+    
+    .info-box {
+      background-color: rgba(245, 245, 245, 0.5);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+    }
   </style>
 </head>
 <body>
+  <!-- 오로라 배경 효과 -->
+  <div class="aurora-container">
+    <div class="aurora"></div>
+    <div class="aurora"></div>
+    <div class="aurora"></div>
+  </div>
+  
   <!-- 헤더 -->
   <header class="header">
     <div class="container header-content">
@@ -60,7 +73,7 @@
   </header>
 
   <!-- 페이지 제목 섹션 -->
-  <section class="page-header" style="background-color: var(--primary-color); color: var(--white); padding: 6rem 0 3rem; margin-bottom: 3rem;">
+  <section class="page-header" style="background-color: rgba(26, 58, 95, 0.4); color: var(--white); padding: 6rem 0 3rem; margin-bottom: 3rem;">
     <div class="container">
       <h1 style="color: var(--white); margin-bottom: 1rem;">문의하기</h1>
       <p style="font-size: var(--font-lg); max-width: 600px;">한 권의 책이라도 당신의 소중한 마음을 담아 빚어냅니다. 인쇄, 복사, 제본 서비스에 대한 문의나 견적 요청을 남겨주세요. 빠른 시일 내에 답변 드리겠습니다.</p>
@@ -105,7 +118,7 @@
             </div>
           </div>
           
-          <div style="margin-top: 3rem; background-color: var(--light-gray); padding: 1.5rem; border-radius: var(--border-radius);">
+          <div style="margin-top: 3rem;" class="info-box">
             <h3>웹하드 정보</h3>
             <p>대용량 파일은 웹하드를 이용해주세요.</p>
             <ul style="padding-left: 1.5rem; margin: 1rem 0;">
@@ -120,7 +133,7 @@
           <h2>문의 안내</h2>
           <p>아래 연락처로 직접 문의해 주시기 바랍니다.</p>
           
-          <div style="margin-top: 2rem; background-color: var(--light-gray); padding: 2rem; border-radius: var(--border-radius);">
+          <div style="margin-top: 2rem;" class="info-box">
             <h3 style="margin-bottom: 1.5rem; text-align: center;">문의 방법</h3>
             
             <div style="margin-bottom: 1.5rem;">
@@ -147,7 +160,7 @@
   </section>
 
   <!-- FAQ 섹션 -->
-  <section class="section" style="background-color: var(--light-gray);">
+  <section class="section" style="background-color: rgba(245, 245, 245, 0.5);">
     <div class="container">
       <h2 class="section-title">자주 묻는 질문</h2>
       
