@@ -376,7 +376,8 @@ a:hover {
   position: relative;
   z-index: 2;
   color: var(--white);
-  max-width: 600px;
+  max-width: 650px; /* 800px에서 700px로 변경 */
+  width: 80%; /* 화면 너비의 80%를 차지하도록 설정 */
 }
 
 .hero h1 {
@@ -735,6 +736,11 @@ a:hover {
     opacity: 0.2;
   }
   
+  .hero-content {
+    max-width: 90%; /* 더 넓게 조정 */
+    width: 90%;
+  }
+  
   .contact-info {
     position: relative;
     top: auto;
@@ -780,10 +786,13 @@ a:hover {
   .hero {
     margin-top: 70px;
     text-align: center;
+    padding: var(--spacing-xl) 0; /* 패딩 추가 */
   }
   
   .hero-content {
     margin: 0 auto;
+    width: 95%; /* 화면 너비의 95%로 설정 */
+    max-width: 100%;
   }
   
   .portfolio-filter {
