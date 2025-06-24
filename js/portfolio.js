@@ -201,7 +201,7 @@ class PortfolioManager {
     const filterButtons = container.querySelectorAll('.filter-btn');
     
     filterButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', () => {
         // 활성 버튼 변경
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
